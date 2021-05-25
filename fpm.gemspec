@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.description = "Convert directories, rpms, python eggs, rubygems, and " \
     "more to rpms, debs, solaris packages and more. Win at package " \
     "management without wasting pointless hours debugging bad rpm specs!"
-  spec.license = "MIT-like"
+  spec.license = "MIT"
 
   spec.required_ruby_version = '>= 1.9.3'
 
@@ -28,11 +28,11 @@ Gem::Specification.new do |spec|
 
   # For logging
   # https://github.com/jordansissel/ruby-cabin
-  spec.add_dependency("cabin", ">= 0.6.0") # license: Apache 2
+  spec.add_dependency("cabin", "~> 0.6.0") # license: Apache 2
 
   # For backports to older rubies
   # https://github.com/marcandre/backports
-  spec.add_dependency("backports", ">= 2.6.2") # license: MIT
+  spec.add_dependency("backports", '~> 2.6', '>= 2.6.2') # license: MIT
 
   # For reading and writing rpms
   spec.add_dependency("arr-pm", "~> 0.0.11") # license: Apache 2
@@ -49,15 +49,15 @@ Gem::Specification.new do |spec|
   # For sourcing from git repos
   spec.add_dependency("git", ">= 1.3.0", "< 2.0") # license: MIT
 
-  spec.add_dependency("stud")
+  spec.add_dependency("stud", "~> 0.0")
 
   # In Ruby 3.0, rexml was moved to a bundled gem instead of a default one,
   # so I think this needs to be added explicitly?
-  spec.add_dependency("rexml")
+  spec.add_dependency("rexml", "~> 0.0")
 
   spec.add_development_dependency("rspec", "~> 3.0.0") # license: MIT (according to wikipedia)
   spec.add_development_dependency("insist", "~> 1.0.0") # license: Apache 2
-  spec.add_development_dependency("pry")
+  spec.add_development_dependency("pry", "~> 0.14")
 
   spec.files = files
   spec.require_paths << "lib"
